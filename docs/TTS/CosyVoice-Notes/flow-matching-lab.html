@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flow Matching 动画实验室 | CosyVoice Notes</title>
+  <meta name="description" content="用交互动画理解 Flow Matching 如何把噪声推向 Mel spectrogram。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>CosyVoice / Flow Lab</span>
+      </a>
+      <nav class="nav" aria-label="主要导航">
+        <a href="./">专题首页</a>
+        <a href="flow-matching.html">详细文档</a>
+        <a href="series-map.html">知识地图</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-head">
+          <div class="eyebrow">Animated Intuition</div>
+          <h1>Flow Matching：学习一条从噪声到 Mel 的路</h1>
+          <p class="hero-copy">拖动时间轴观察中间态：左侧是随机噪声 x0，中间是模型学到的速度场，右侧是目标 Mel x1。CosyVoice 的 CFM/DiT decoder 就是在文本、speaker prompt 和 speech token 条件下学习这条路。</p>
+        </div>
+
+        <div class="flow-stage">
+          <div class="panel flow-canvas-wrap">
+            <canvas data-flow-canvas aria-label="Flow Matching 粒子动画"></canvas>
+          </div>
+          <aside class="panel pad controls">
+            <div>
+              <div class="slider-label">
+                <span>从 noise 到 mel 的时间</span>
+                <strong data-flow-label>t = 35%</strong>
+              </div>
+              <input data-flow-progress type="range" min="0" max="1" step="0.001" value="0.35">
+              <div class="action-row">
+                <button class="button primary" data-flow-play type="button">暂停</button>
+                <a class="button" href="flow-matching.html">读公式和代码解释</a>
+              </div>
+            </div>
+
+            <div class="step-list">
+              <div class="step active" data-flow-step>
+                <strong>1. 采样噪声 x0</strong><br>
+                推理开始时还没有 Mel，只是一团随机连续变量。
+              </div>
+              <div class="step" data-flow-step>
+                <strong>2. 条件速度场 vθ</strong><br>
+                模型根据文本、prompt、speech token 判断每个点下一步往哪里走。
+              </div>
+              <div class="step" data-flow-step>
+                <strong>3. Euler / ODE 采样</strong><br>
+                多次沿速度场前进，逐步形成声学结构。
+              </div>
+              <div class="step" data-flow-step>
+                <strong>4. 得到 Mel，再交给 Vocoder</strong><br>
+                Flow Matching 产出连续声学特征，Vocoder 才负责生成最终波形。
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="section-head">
+          <div class="eyebrow">Why It Matters</div>
+          <h2>放回 CosyVoice 里看</h2>
+          <p>Flow Matching 不是孤立算法，它是 LLM 之后的声学生成层。LLM 先给出离散 speech token，Flow Matching 再把 token、speaker prompt、文本上下文变成可被 Vocoder 播放的 Mel。</p>
+        </div>
+        <div class="grid">
+          <div class="panel pad span-4">
+            <h3>CosyVoice 1</h3>
+            <p class="lede">离线 CFM：重点是把监督语义 token 映射到高质量 Mel。</p>
+          </div>
+          <div class="panel pad span-4">
+            <h3>CosyVoice 2</h3>
+            <p class="lede">chunk-aware CFM：限制未来信息，让 Mel 可以分块生成，降低首包延迟。</p>
+          </div>
+          <div class="panel pad span-4">
+            <h3>CosyVoice 3</h3>
+            <p class="lede">DiT-based CFM：用更强的 estimator 承接多语种、大数据和后训练需求。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      动画由 Canvas 实时渲染，适合在桌面和移动端直接访问；GPT 图片用于建立直觉，精确关系以代码和文字说明为准。
+    </footer>
+  </div>
+  <script src="flow-lab.js"></script>
+</body>
+</html>

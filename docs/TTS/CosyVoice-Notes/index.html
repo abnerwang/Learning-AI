@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CosyVoice Notes | Learning AI</title>
+  <meta name="description" content="CosyVoice 系列论文、前置知识、Flow Matching 动画解释和复习卡片。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="../../">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Learning AI / TTS</span>
+      </a>
+      <nav class="nav" aria-label="主要导航">
+        <a href="#map">总览</a>
+        <a href="#system">系统架构</a>
+        <a href="#versions">版本演进</a>
+        <a href="#prereq">前置知识</a>
+        <a href="flow-matching-lab.html">Flow 动画</a>
+        <a href="#review">复习</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="eyebrow">CosyVoice Research System</div>
+          <h1>把 CosyVoice 学成一张可推理的系统图</h1>
+          <p class="hero-copy">这不是论文摘抄页，而是一套从直觉、组件、版本演进到复习卡片的学习站。目标是让你能解释：文本如何变成 speech token，token 如何驱动 Flow Matching，最后如何经 Vocoder 变成声音。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="flow-matching-lab.html">打开 Flow Matching 动画实验室</a>
+            <a class="button" href="series-map.html">查看原始知识地图</a>
+            <a class="button" href="anki-cards.html">刷 Anki 卡片</a>
+          </div>
+          <div class="kpi-row">
+            <div class="kpi"><strong>3</strong><span>篇核心论文：CosyVoice 1/2/3</span></div>
+            <div class="kpi"><strong>4</strong><span>关键模块：Tokenizer / LLM / Flow / Vocoder</span></div>
+            <div class="kpi"><strong>17</strong><span>前置概念，按学习路径重排</span></div>
+            <div class="kpi"><strong>51</strong><span>单知识点 Anki 卡片</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="section">
+        <div class="section-head">
+          <div class="eyebrow">Learning Map</div>
+          <h2>先建立地图，再进入论文细节</h2>
+          <p>CosyVoice 系列可以按一个主问题理解：如何让 TTS 同时具备内容一致性、音色克隆能力、低延迟、多语种泛化和真实场景鲁棒性。</p>
+        </div>
+        <div class="grid">
+          <div class="panel visual-frame span-7">
+            <img src="assets/cosyvoice-site-system-gpt.png" alt="CosyVoice 系统概念图">
+          </div>
+          <div class="panel pad span-5">
+            <h3>你需要抓住的主线</h3>
+            <ul class="compact-list">
+              <li><strong>CosyVoice 1：</strong>先把 speech token 做“语义化”，解决 token 和文本对齐不足的问题。</li>
+              <li><strong>CosyVoice 2：</strong>把离线系统改造成可流式系统，同时简化 tokenizer 和 LM 结构。</li>
+              <li><strong>CosyVoice 3：</strong>把实验室能力推向真实世界：多语种、长尾文本、跨语种、情绪和后训练。</li>
+              <li><strong>Flow Matching：</strong>不是理解文本的模块，而是把语义条件转成连续 Mel 轨迹的声学生成器。</li>
+            </ul>
+            <div class="action-row">
+              <a class="button primary" href="series-map.html">读系列知识地图</a>
+              <a class="button" href="prerequisites.html">补前置知识</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="system" class="section alt">
+        <div class="section-head">
+          <div class="eyebrow">System Pipeline</div>
+          <h2>四个模块各司其职</h2>
+          <p>如果只记一句：LLM 负责“生成离散语音语义序列”，Flow Matching 负责“把离散语义变成连续声学表示”，Vocoder 负责“把声学表示还原成波形”。</p>
+        </div>
+        <div class="pipeline">
+          <article class="node">
+            <div class="node-number">01 / Tokenizer</div>
+            <h3>把声音压成 token</h3>
+            <p>CosyVoice 1 使用 ASR encoder + VQ 得到监督语义 token；CosyVoice 2 转向 FSQ；CosyVoice 3 引入 MinMo 多任务 tokenizer。</p>
+          </article>
+          <article class="node">
+            <div class="node-number">02 / LLM</div>
+            <h3>预测语义 token</h3>
+            <p>输入文本、prompt token 和条件信息，输出 speech token。它解决“说什么”和“像谁说”的离散序列问题。</p>
+          </article>
+          <article class="node">
+            <div class="node-number">03 / Flow Matching</div>
+            <h3>从 token 走到 Mel</h3>
+            <p>学习一个速度场，把噪声逐步推向目标 Mel。CosyVoice 2 的关键是 chunk-aware CFM，用于流式合成。</p>
+          </article>
+          <article class="node">
+            <div class="node-number">04 / Vocoder</div>
+            <h3>从 Mel 还原波形</h3>
+            <p>最后把连续声学特征变成可播放音频。它不负责理解文本，但决定声音细节和听感上限。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="flow" class="section">
+        <div class="section-head">
+          <div class="eyebrow">Flow Matching</div>
+          <h2>用动态图理解“噪声如何走向语音”</h2>
+          <p>Flow Matching 的核心不是“去噪很多步”这个表象，而是学习一个条件速度场：在文本、speaker prompt、speech token 的约束下，每一步应该往哪里移动。</p>
+        </div>
+        <div class="grid">
+          <div class="panel visual-frame span-6">
+            <img src="assets/flow-matching-landscape-gpt.png" alt="Flow Matching 从噪声到 Mel 的概念图">
+          </div>
+          <div class="panel pad span-6">
+            <h3>交互动画已经单独拆成实验室</h3>
+            <p class="lede">你可以播放粒子如何从随机噪声移动到 Mel 结构，也可以拖动时间轴观察中间态。页面里把 x0、velocity field、x1 和 CosyVoice 的 Token-to-Mel 关系放在同一个视图里。</p>
+            <div class="action-row">
+              <a class="button primary" href="flow-matching-lab.html">进入 Flow Matching 动画实验室</a>
+              <a class="button" href="flow-matching.html">读详细专题文档</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="versions" class="section alt">
+        <div class="section-head">
+          <div class="eyebrow">Evolution</div>
+          <h2>CosyVoice 1 → 2 → 3：每一代解决一个更现实的问题</h2>
+          <p>版本演进不是简单堆模型，而是从“可做”到“可实时交互”，再到“真实复杂输入可用”。</p>
+        </div>
+        <div class="grid">
+          <div class="panel span-7">
+            <div class="version">
+              <div class="version-label">CosyVoice 1</div>
+              <div>
+                <h3>监督语义 token：让文本和语音 token 对齐</h3>
+                <ul>
+                  <li>重点解决无监督 speech token 语义不足、内容一致性弱的问题。</li>
+                  <li>形成 LLM + Conditional Flow Matching + Vocoder 的两阶段骨架。</li>
+                  <li><a href="cosyvoice-1.html">查看论文笔记 →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="version">
+              <div class="version-label">CosyVoice 2</div>
+              <div>
+                <h3>流式化：把离线合成改造成实时系统</h3>
+                <ul>
+                  <li>引入 FSQ、预训练 LLM、统一流式 LM 和 chunk-aware CFM。</li>
+                  <li>核心工程目标是降低首包延迟，同时尽量保持质量无损。</li>
+                  <li><a href="cosyvoice-2.html">查看论文笔记 →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="version">
+              <div class="version-label">CosyVoice 3</div>
+              <div>
+                <h3>真实场景：多语种、长尾文本与后训练</h3>
+                <ul>
+                  <li>引入 MinMo、DiffRO、百万小时级数据和更系统的 CV3-Eval。</li>
+                  <li>关注 in-the-wild 的输入复杂度，而不只是标准 benchmark。</li>
+                  <li><a href="cosyvoice-3.html">查看论文笔记 →</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel visual-frame span-5">
+            <img src="assets/cosyvoice-site-versions-gpt.png" alt="CosyVoice 三代版本演进概念图">
+          </div>
+        </div>
+      </section>
+
+      <section id="prereq" class="section">
+        <div class="section-head">
+          <div class="eyebrow">Prerequisites</div>
+          <h2>前置知识按“理解阻塞点”重排</h2>
+          <p>不要按术语表背。先补齐能挡住论文理解的概念，再进入细节：tokenizer、量化、语言模型、Flow Matching、流式推理、后训练。</p>
+        </div>
+        <div class="concept-grid">
+          <article class="concept"><small>Token 表示</small><h3>Speech Tokenizer / VQ / FSQ / MinMo</h3><p>理解 CosyVoice 为什么从 VQ 走向 FSQ，再到多任务 tokenizer。</p></article>
+          <article class="concept"><small>序列生成</small><h3>Autoregressive LM / Qwen</h3><p>理解 LLM 在 TTS 中负责离散语义 token，而不是直接生成波形。</p></article>
+          <article class="concept"><small>声学生成</small><h3>Conditional Flow Matching / DiT</h3><p>理解从 token 到 Mel 的连续轨迹，以及为什么可加条件、可流式。</p></article>
+          <article class="concept"><small>实时系统</small><h3>Streaming TTS / Chunked Attention</h3><p>理解首包延迟、未来信息限制和 chunk-aware decoder 的工程约束。</p></article>
+          <article class="concept"><small>后训练</small><h3>DiffRO / Gumbel-Softmax</h3><p>理解如何把不可微的奖励目标变成可优化路径，以及 reward balance 的风险。</p></article>
+          <article class="concept"><small>真实输入</small><h3>Text Normalization / Pronunciation Inpainting</h3><p>理解真实文本不是干净 benchmark，数字、缩写、多音字和纠音都会影响 TTS。</p></article>
+        </div>
+        <div class="action-row">
+          <a class="button primary" href="prerequisites.html">读完整前置知识</a>
+        </div>
+      </section>
+
+      <section id="review" class="section alt">
+        <div class="section-head">
+          <div class="eyebrow">Review Path</div>
+          <h2>复习顺序：从系统到论文，再回到卡片</h2>
+        </div>
+        <div class="learning-path">
+          <a class="path-item" href="series-map.html"><strong>01 地图</strong><span>建立版本演进和模块关系</span></a>
+          <a class="path-item" href="prerequisites.html"><strong>02 前置</strong><span>补齐阻塞概念</span></a>
+          <a class="path-item" href="flow-matching-lab.html"><strong>03 动画</strong><span>建立 Flow 直觉</span></a>
+          <a class="path-item" href="cosyvoice-1.html"><strong>04 CV1</strong><span>监督语义 token</span></a>
+          <a class="path-item" href="cosyvoice-2.html"><strong>05 CV2</strong><span>流式系统</span></a>
+          <a class="path-item" href="cosyvoice-3.html"><strong>06 CV3</strong><span>真实场景 scaling</span></a>
+          <a class="path-item" href="anki-cards.html"><strong>07 Anki</strong><span>单点检索复习</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Learning AI / TTS / CosyVoice Notes. 原始论文 PDF 未发布；本页发布的是重组后的学习系统、GPT 概念图和交互动画。
+    </footer>
+  </div>
+</body>
+</html>
