@@ -111,8 +111,11 @@ h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; }
 .concept { padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); }
 .concept small { color: var(--cyan); font-weight: 760; }
 .concept p { margin: 8px 0 0; color: var(--muted); }
-.flow-stage { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr); gap: 18px; align-items: stretch; }
-.flow-canvas-wrap { position: relative; min-height: 620px; overflow: hidden; }
+.flow-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.flow-tab { min-height: 42px; padding: 0 16px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: rgba(255,255,255,0.04); font: inherit; font-weight: 720; cursor: pointer; }
+.flow-tab.active { color: var(--text); border-color: rgba(94, 231, 255, 0.64); background: linear-gradient(135deg, rgba(94,231,255,0.18), rgba(255,198,109,0.08)); box-shadow: 0 16px 36px rgba(94,231,255,0.1); }
+.flow-stage { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(330px, 0.82fr); gap: 18px; align-items: stretch; }
+.flow-canvas-wrap { position: relative; min-height: 560px; overflow: hidden; }
 canvas { width: 100%; height: 100%; display: block; }
 .controls { display: grid; gap: 16px; }
 .slider-label { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; }

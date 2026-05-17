@@ -29,14 +29,21 @@
           <p class="hero-copy">拖动时间轴观察完整链路：先从随机噪声 x0 出发，构造中间态 xt；再把 speech token、speaker prompt、mask 等条件送入速度模型 vθ；最后用 Euler / ODE 步进把 xt 推成目标 Mel x1。</p>
         </div>
 
+        <div class="flow-tabs" aria-label="Flow Matching 动画视角">
+          <button class="flow-tab active" data-flow-mode="pipeline" type="button">全链路</button>
+          <button class="flow-tab" data-flow-mode="field" type="button">速度场</button>
+          <button class="flow-tab" data-flow-mode="condition" type="button">条件约束</button>
+          <button class="flow-tab" data-flow-mode="streaming" type="button">流式 chunk</button>
+        </div>
+
         <div class="flow-stage">
           <div class="panel flow-canvas-wrap">
-            <canvas data-flow-canvas aria-label="Flow Matching 粒子动画"></canvas>
+            <canvas data-flow-canvas aria-label="Flow Matching 分步动画"></canvas>
           </div>
           <aside class="panel pad controls">
             <div>
               <div class="slider-label">
-                <span>生成进度：x0 -> xt -> x1</span>
+                <span data-flow-mode-title>全链路：x0 -> xt -> x1</span>
                 <strong data-flow-label>t = 35%</strong>
               </div>
               <input data-flow-progress type="range" min="0" max="1" step="0.001" value="0.35">
@@ -47,30 +54,10 @@
             </div>
 
             <div class="step-list">
-              <div class="step active" data-flow-step>
-                <strong>1. 起点：采样噪声 x0</strong><br>
-                推理开始时还没有声学结构，只是一张随机 Mel 形状的连续变量。
-              </div>
-              <div class="step" data-flow-step>
-                <strong>2. 中间态：构造 xt</strong><br>
-                训练时从 x0 和真实 Mel x1 插值得到 xt，让模型学会任意时刻的方向。
-              </div>
-              <div class="step" data-flow-step>
-                <strong>3. 条件：内容和音色约束</strong><br>
-                speech token 决定要说什么，speaker prompt / masked Mel 约束音色和已知帧。
-              </div>
-              <div class="step" data-flow-step>
-                <strong>4. 速度：预测 vθ(xt, t, cond)</strong><br>
-                模型不是直接吐最终图，而是在当前位置预测“下一小步往哪里走”。
-              </div>
-              <div class="step" data-flow-step>
-                <strong>5. 采样：Euler / ODE 多步前进</strong><br>
-                推理时重复更新 xt = xt + vθ · Δt，逐渐形成清晰的 Mel 纹理。
-              </div>
-              <div class="step" data-flow-step>
-                <strong>6. 输出：Mel -> Vocoder -> waveform</strong><br>
-                Flow Matching 只生成 Mel；真正可播放的波形由 Vocoder 生成。
-              </div>
+              <div class="step active" data-flow-step></div>
+              <div class="step" data-flow-step></div>
+              <div class="step" data-flow-step></div>
+              <div class="step" data-flow-step></div>
             </div>
           </aside>
         </div>
