@@ -111,15 +111,15 @@ h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; }
 .concept { padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); }
 .concept small { color: var(--cyan); font-weight: 760; }
 .concept p { margin: 8px 0 0; color: var(--muted); }
-.flow-stage { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); gap: 18px; align-items: stretch; }
-.flow-canvas-wrap { position: relative; min-height: 460px; overflow: hidden; }
+.flow-stage { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr); gap: 18px; align-items: stretch; }
+.flow-canvas-wrap { position: relative; min-height: 620px; overflow: hidden; }
 canvas { width: 100%; height: 100%; display: block; }
 .controls { display: grid; gap: 16px; }
 .slider-label { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; }
 input[type="range"] { width: 100%; accent-color: var(--cyan); }
 .step-list { display: grid; gap: 10px; }
-.step { padding: 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: rgba(255,255,255,0.035); }
-.step.active { border-color: rgba(94, 231, 255, 0.55); color: var(--text); background: rgba(94, 231, 255, 0.09); }
+.step { padding: 13px 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: rgba(255,255,255,0.035); }
+.step.active { border-color: rgba(94, 231, 255, 0.6); color: var(--text); background: linear-gradient(135deg, rgba(94, 231, 255, 0.12), rgba(255,198,109,0.06)); box-shadow: 0 14px 34px rgba(94,231,255,0.08); }
 .learning-path { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
 .path-item { min-height: 124px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); }
 .path-item strong { display: block; color: var(--text); }
