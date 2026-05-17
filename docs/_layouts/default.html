@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/TTS/CosyVoice-Notes/styles.css' | relative_url }}">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="{{ '/TTS/CosyVoice-Notes/' | relative_url }}">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>CosyVoice Notes</span>
+      </a>
+      <nav class="nav" aria-label="主要导航">
+        <a href="{{ '/TTS/CosyVoice-Notes/' | relative_url }}">专题首页</a>
+        <a href="{{ '/TTS/CosyVoice-Notes/flow-matching-lab.html' | relative_url }}">Flow 动画</a>
+        <a href="{{ '/TTS/CosyVoice-Notes/series-map.html' | relative_url }}">知识地图</a>
+        <a href="{{ '/TTS/CosyVoice-Notes/anki-cards.html' | relative_url }}">Anki</a>
+      </nav>
+    </header>
+    <main class="doc-main">
+      <article class="doc-card">
+        {{ content }}
+      </article>
+    </main>
+    <footer class="footer">Learning AI / TTS / CosyVoice Notes</footer>
+  </div>
+</body>
+</html>
