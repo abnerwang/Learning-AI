@@ -3,10 +3,6 @@ title: "CosyVoice 2：可流式的大语言模型 TTS"
 layout: default
 ---
 
-# CosyVoice 2：可流式的大语言模型 TTS
-
-[返回 CosyVoice 专题首页](./)
-
 # CosyVoice 2 - 可流式的大语言模型 TTS
 
 ## 一句话总结

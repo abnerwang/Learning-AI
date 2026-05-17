@@ -3,10 +3,6 @@ title: "CosyVoice 3：面向真实场景的多语种语音生成"
 layout: default
 ---
 
-# CosyVoice 3：面向真实场景的多语种语音生成
-
-[返回 CosyVoice 专题首页](./)
-
 # CosyVoice 3 - 面向真实场景的多语种语音生成
 
 ## 一句话总结

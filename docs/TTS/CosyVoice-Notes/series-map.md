@@ -5,10 +5,6 @@ layout: default
 
 # CosyVoice 系列知识地图
 
-[返回 CosyVoice 专题首页](./)
-
-# CosyVoice 系列知识地图
-
 ## 核心结论
 
 CosyVoice 系列的演进主线是：先用监督语义 speech token 建立高质量零样本 TTS 骨架，再把系统流式化和 LLM 化，最后通过多任务 tokenizer、数据/模型 scaling 和 token-level post-training 推向真实多语种场景。

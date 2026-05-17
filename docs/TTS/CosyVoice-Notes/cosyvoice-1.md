@@ -3,10 +3,6 @@ title: "CosyVoice 1：监督语义 Token 的可扩展零样本 TTS"
 layout: default
 ---
 
-# CosyVoice 1：监督语义 Token 的可扩展零样本 TTS
-
-[返回 CosyVoice 专题首页](./)
-
 # CosyVoice 1 - 监督语义 Token 的可扩展零样本 TTS
 
 ## 一句话总结

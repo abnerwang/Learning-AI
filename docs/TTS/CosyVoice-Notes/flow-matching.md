@@ -3,10 +3,6 @@ title: "Flow Matching 专题"
 layout: default
 ---
 
-# Flow Matching 专题
-
-[返回 CosyVoice 专题首页](./)
-
 # Flow Matching 专题：从零理解 CosyVoice 的 Token-to-Mel
 
 ## 一句话总结

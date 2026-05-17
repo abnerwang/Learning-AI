@@ -5,8 +5,6 @@ layout: default
 
 # CosyVoice 系列 Anki 卡片
 
-[返回 CosyVoice 专题首页](./)
-
 ![cosyvoice anki overview gpt v2](assets/cosyvoice-anki-overview-gpt-v2.png)
 
 复习提示：先把 Tokenizer、LLM、Flow、Streaming、DiffRO 五个锚点记牢，再刷下面的单点卡片。

@@ -5,10 +5,6 @@ layout: default
 
 # CosyVoice 系列前置知识
 
-[返回 CosyVoice 专题首页](./)
-
-# CosyVoice 系列前置知识
-
 ## 一句话总结
 
 理解 CosyVoice 系列，需要先掌握“文本如何变成离散语音 token、LLM 如何预测这些 token、Flow Matching 如何把 token 渲染成 Mel、Vocoder 如何把 Mel 还原成 waveform”，再理解流式、后训练、多语种和发音控制这些工程扩展。
