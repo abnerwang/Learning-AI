@@ -11,11 +11,11 @@ CosyVoice 3 在 CosyVoice 2 的 streaming LLM + CFM 架构上，通过 MinMo 派
 
 ## 图解
 
-![cosyvoice3 diffro gpt2](assets/cosyvoice3-diffro-gpt2.png)
+![CosyVoice 3 DiffRO 机制图](assets/cosyvoice3-diffro-gpt2.png)
 
 - 这张图重点看 DiffRO 的优化位置：它不反复生成完整音频再打分，而是在 speech token logits 层做可微 reward optimization。
 - CFM 和 vocoder 在 DiffRO 图中被弱化，是因为它们主要是下游渲染链路，不是 DiffRO 直接优化的核心对象。
-- 这张流程图由 gpt-image-2 生成，用于辅助建立直觉；精确术语和链路以正文描述为准。
+- 这张流程图已按统一信息图规范重绘，用于辅助建立直觉；精确术语和链路以正文描述为准。
 
 ## 研究问题
 

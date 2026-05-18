@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#14213d" flood-opacity="0.10"/></filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/></marker>
+      <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#2f6feb"/></marker>
+      <linearGradient id="hero" x1="0" x2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#12324a"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    </defs>
+<rect width="1536" height="1024" fill="#f8fafc"/>
+<path d="M0 210 C230 145 370 260 570 180 C850 70 1120 110 1536 18 L1536 0 L0 0 Z" fill="#eaf4ff"/>
+<path d="M0 1024 L1536 1024 L1536 830 C1260 890 980 800 720 874 C450 950 240 870 0 930 Z" fill="#f0f7f4"/>
+<text x="88" y="82" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="44" font-weight="760" fill="#162033">
+<tspan x="88" dy="0">CosyVoice 学习地图</tspan>
+</text>
+<text x="90" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="500" fill="#5f6f86">
+<tspan x="90" dy="0">先抓模块职责，再看版本演进和 Flow Matching 细节</tspan>
+</text>
+<rect x="90" y="288" width="130" height="42" rx="21" fill="#1f9d67" opacity="0.10" stroke="#1f9d67" stroke-width="1.2"/>
+<text x="155" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#1f9d67">
+<tspan x="155" dy="0">01</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="90" y="350" width="318" height="210" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="350" width="8" height="210" rx="4" fill="#1f9d67"/>
+</g>
+<text x="118" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">Speech</tspan>
+<tspan x="118" dy="29.44">Tokenizer</tspan>
+</text>
+<text x="118" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">把参考语音压成离散</tspan>
+<tspan x="118" dy="23.04">speech token</tspan>
+</text>
+<line x1="416" y1="455" x2="428" y2="455" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="436" y="288" width="130" height="42" rx="21" fill="#6d5bd0" opacity="0.10" stroke="#6d5bd0" stroke-width="1.2"/>
+<text x="501" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#6d5bd0">
+<tspan x="501" dy="0">02</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="436" y="350" width="318" height="210" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="436" y="350" width="8" height="210" rx="4" fill="#6d5bd0"/>
+</g>
+<text x="464" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="464" dy="0">LLM</tspan>
+</text>
+<text x="464" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="464" dy="0">生成目标 speech</tspan>
+<tspan x="464" dy="23.04">token 序列</tspan>
+</text>
+<line x1="762" y1="455" x2="774" y2="455" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="782" y="288" width="130" height="42" rx="21" fill="#0ea5b7" opacity="0.10" stroke="#0ea5b7" stroke-width="1.2"/>
+<text x="847" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#0ea5b7">
+<tspan x="847" dy="0">03</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="782" y="350" width="318" height="210" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="782" y="350" width="8" height="210" rx="4" fill="#0ea5b7"/>
+</g>
+<text x="810" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="810" dy="0">Flow</tspan>
+<tspan x="810" dy="29.44">Matching</tspan>
+</text>
+<text x="810" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="810" dy="0">把 token 渲染成连续</tspan>
+<tspan x="810" dy="23.04">Mel</tspan>
+</text>
+<line x1="1108" y1="455" x2="1120" y2="455" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="1128" y="288" width="130" height="42" rx="21" fill="#b7791f" opacity="0.10" stroke="#b7791f" stroke-width="1.2"/>
+<text x="1193" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#b7791f">
+<tspan x="1193" dy="0">04</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="1128" y="350" width="318" height="210" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1128" y="350" width="8" height="210" rx="4" fill="#b7791f"/>
+</g>
+<text x="1156" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="1156" dy="0">Vocoder</tspan>
+</text>
+<text x="1156" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="1156" dy="0">Mel →</tspan>
+<tspan x="1156" dy="23.04">waveform，可播放音频</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="250" y="760" width="1036" height="122" rx="18" fill="#f8fffd" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="250" y="760" width="8" height="122" rx="4" fill="#0ea5b7"/>
+</g>
+<text x="278" y="802" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="24" font-weight="750" fill="#162033">
+<tspan x="278" dy="0">学习主线</tspan>
+</text>
+<text x="278" y="842" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="278" dy="0">Tokenizer 定义语音中间语言；LLM 负责生成；CFM 渲染声学；Vocoder 输出声音。</tspan>
+</text>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#14213d" flood-opacity="0.10"/></filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/></marker>
+      <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#2f6feb"/></marker>
+      <linearGradient id="hero" x1="0" x2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#12324a"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    </defs>
+<rect width="1536" height="1024" fill="#f8fafc"/>
+<path d="M0 210 C230 145 370 260 570 180 C850 70 1120 110 1536 18 L1536 0 L0 0 Z" fill="#eaf4ff"/>
+<path d="M0 1024 L1536 1024 L1536 830 C1260 890 980 800 720 874 C450 950 240 870 0 930 Z" fill="#f0f7f4"/>
+<text x="88" y="82" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="44" font-weight="760" fill="#162033">
+<tspan x="88" dy="0">Flow Matching：从噪声到 Mel</tspan>
+</text>
+<text x="90" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="500" fill="#5f6f86">
+<tspan x="90" dy="0">读图顺序：起点 x0 → 中间态 xt → 条件速度场 → 目标 Mel</tspan>
+<tspan x="90" dy="28.16">x1</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="120" y="320" width="250" height="170" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="120" y="320" width="8" height="170" rx="4" fill="#c2415a"/>
+</g>
+<text x="148" y="362" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="148" dy="0">x0 噪声</tspan>
+<tspan x="148" dy="29.44">Mel</tspan>
+</text>
+<text x="148" y="402" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="148" dy="0">随机采样，没有语音结构</tspan>
+</text>
+<line x1="380" y1="405" x2="418" y2="405" stroke="#718096" stroke-width="2.2" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="430" y="320" width="250" height="170" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="430" y="320" width="8" height="170" rx="4" fill="#b7791f"/>
+</g>
+<text x="458" y="362" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="458" dy="0">xt 中间状态</tspan>
+</text>
+<text x="458" y="402" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="458" dy="0">路径上的某个时刻</tspan>
+</text>
+<line x1="690" y1="405" x2="738" y2="405" stroke="#718096" stroke-width="2.2" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="750" y="320" width="250" height="170" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="750" y="320" width="8" height="170" rx="4" fill="#2f6feb"/>
+</g>
+<text x="778" y="362" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="778" dy="0">vθ 条件速度场</tspan>
+</text>
+<text x="778" y="402" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="778" dy="0">预测下一步方向</tspan>
+</text>
+<line x1="1010" y1="405" x2="1068" y2="405" stroke="#718096" stroke-width="2.2" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1080" y="320" width="250" height="170" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1080" y="320" width="8" height="170" rx="4" fill="#1f9d67"/>
+</g>
+<text x="1108" y="362" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="1108" dy="0">x1 / 生成</tspan>
+<tspan x="1108" dy="29.44">Mel</tspan>
+</text>
+<text x="1108" y="402" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="1108" dy="0">形成可送入</tspan>
+<tspan x="1108" dy="23.04">vocoder</tspan>
+<tspan x="1108" dy="23.04">的声学图</tspan>
+</text>
+<path d="M130 650 q42 -30 80 -4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M215 663 q59 -18 97 0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M300 658 q76 -6 114 4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M385 653 q47 6 85 8" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M470 666 q64 18 102 12" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M555 661 q81 -30 119 16" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M640 656 q52 -18 90 20" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M725 651 q69 -6 107 -4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M810 664 q86 6 124 0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M895 659 q57 18 95 4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M980 654 q74 -30 112 8" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1065 667 q45 -18 83 12" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1150 662 q62 -6 100 16" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1235 657 q79 6 117 20" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M130 720 q50 18 88 -4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M215 733 q67 -30 105 0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M300 728 q84 -18 122 4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M385 723 q55 -6 93 8" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M470 718 q72 6 110 12" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M555 731 q43 18 81 16" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M640 726 q60 -30 98 20" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M725 721 q77 -18 115 -4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M810 734 q48 -6 86 0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M895 729 q65 6 103 4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M980 724 q82 18 120 8" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1065 719 q53 -30 91 12" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1150 732 q70 -18 108 16" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1235 727 q87 -6 125 20" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M130 790 q58 6 96 -4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M215 803 q75 18 113 0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M300 798 q46 -30 84 4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M385 793 q63 -18 101 8" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M470 788 q80 -6 118 12" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M555 801 q51 6 89 16" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M640 796 q68 18 106 20" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M725 791 q85 -30 123 -4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M810 786 q56 -18 94 0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M895 799 q73 -6 111 4" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M980 794 q44 6 82 8" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1065 789 q61 18 99 12" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1150 802 q78 -30 116 16" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<path d="M1235 797 q49 -18 87 20" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.7" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1050" y="642" width="370" height="150" rx="18" fill="#f7fffd" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1050" y="642" width="8" height="150" rx="4" fill="#0ea5b7"/>
+</g>
+<text x="1078" y="684" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="24" font-weight="750" fill="#162033">
+<tspan x="1078" dy="0">CosyVoice 条件</tspan>
+</text>
+<text x="1078" y="724" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="1078" dy="0">speech token /</tspan>
+<tspan x="1078" dy="23.04">prompt Mel /</tspan>
+<tspan x="1078" dy="23.04">speaker / mask</tspan>
+<tspan x="1078" dy="23.04">共同约束速度场</tspan>
+</text>
+</svg>

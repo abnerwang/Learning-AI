@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#14213d" flood-opacity="0.10"/></filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/></marker>
+      <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#2f6feb"/></marker>
+      <linearGradient id="hero" x1="0" x2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#12324a"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    </defs>
+<rect width="1536" height="1024" fill="#f8fafc"/>
+<path d="M0 210 C230 145 370 260 570 180 C850 70 1120 110 1536 18 L1536 0 L0 0 Z" fill="#eaf4ff"/>
+<path d="M0 1024 L1536 1024 L1536 830 C1260 890 980 800 720 874 C450 950 240 870 0 930 Z" fill="#f0f7f4"/>
+<text x="88" y="82" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="44" font-weight="760" fill="#162033">
+<tspan x="88" dy="0">VQ 与 FSQ 对比</tspan>
+</text>
+<text x="90" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="500" fill="#5f6f86">
+<tspan x="90" dy="0">核心区别：VQ 依赖 learned codebook；FSQ</tspan>
+<tspan x="90" dy="28.16">用标量量化改善利用率和训练稳定性</tspan>
+</text>
+<rect x="100" y="168" width="220" height="42" rx="21" fill="#2f6feb" opacity="0.10" stroke="#2f6feb" stroke-width="1.2"/>
+<text x="210" y="195" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#2f6feb">
+<tspan x="210" dy="0">VQ</tspan>
+</text>
+<rect x="458" y="168" width="220" height="42" rx="21" fill="#1f9d67" opacity="0.10" stroke="#1f9d67" stroke-width="1.2"/>
+<text x="568" y="195" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#1f9d67">
+<tspan x="568" dy="0">FSQ</tspan>
+</text>
+<rect x="816" y="168" width="220" height="42" rx="21" fill="#b7791f" opacity="0.10" stroke="#b7791f" stroke-width="1.2"/>
+<text x="926" y="195" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#b7791f">
+<tspan x="926" dy="0">对 TTS 的影响</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="100" y="230" width="330" height="184" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="100" y="230" width="8" height="184" rx="4" fill="#2f6feb"/>
+</g>
+<text x="128" y="272" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="128" dy="0">Codebook</tspan>
+<tspan x="128" dy="28.16">lookup</tspan>
+</text>
+<text x="128" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="500" fill="#5f6f86">
+<tspan x="128" dy="0">向量映射到最近的可学习 code</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="458" y="230" width="330" height="184" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="458" y="230" width="8" height="184" rx="4" fill="#1f9d67"/>
+</g>
+<text x="486" y="272" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="486" dy="0">Scalar</tspan>
+<tspan x="486" dy="28.16">levels</tspan>
+</text>
+<text x="486" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="500" fill="#5f6f86">
+<tspan x="486" dy="0">每个维度独立离散化，再组合成</tspan>
+<tspan x="486" dy="21.76">token</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="816" y="230" width="330" height="184" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="816" y="230" width="8" height="184" rx="4" fill="#b7791f"/>
+</g>
+<text x="844" y="272" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="844" dy="0">内容一致性</tspan>
+</text>
+<text x="844" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="500" fill="#5f6f86">
+<tspan x="844" dy="0">token</tspan>
+<tspan x="844" dy="21.76">利用率越高，越少丢失上下文变化</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="100" y="442" width="330" height="184" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="100" y="442" width="8" height="184" rx="4" fill="#2f6feb"/>
+</g>
+<text x="128" y="484" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="128" dy="0">风险</tspan>
+</text>
+<text x="128" y="524" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="500" fill="#5f6f86">
+<tspan x="128" dy="0">codebook</tspan>
+<tspan x="128" dy="21.76">collapse，部分 code</tspan>
+<tspan x="128" dy="21.76">长期不用</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="458" y="442" width="330" height="184" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="458" y="442" width="8" height="184" rx="4" fill="#1f9d67"/>
+</g>
+<text x="486" y="484" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="486" dy="0">收益</tspan>
+</text>
+<text x="486" y="524" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="500" fill="#5f6f86">
+<tspan x="486" dy="0">更高 codebook</tspan>
+<tspan x="486" dy="21.76">utilization，结构更简单</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="816" y="442" width="330" height="184" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="816" y="442" width="8" height="184" rx="4" fill="#b7791f"/>
+</g>
+<text x="844" y="484" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="844" dy="0">CosyVoice 2</tspan>
+</text>
+<text x="844" y="524" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="500" fill="#5f6f86">
+<tspan x="844" dy="0">用 FSQ 替换 VQ</tspan>
+<tspan x="844" dy="21.76">是质量和流式化基础之一</tspan>
+</text>
+</svg>

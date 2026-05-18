@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#14213d" flood-opacity="0.10"/></filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/></marker>
+      <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#2f6feb"/></marker>
+      <linearGradient id="hero" x1="0" x2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#12324a"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    </defs>
+<rect width="1536" height="1024" fill="#f8fafc"/>
+<path d="M0 210 C230 145 370 260 570 180 C850 70 1120 110 1536 18 L1536 0 L0 0 Z" fill="#eaf4ff"/>
+<path d="M0 1024 L1536 1024 L1536 830 C1260 890 980 800 720 874 C450 950 240 870 0 930 Z" fill="#f0f7f4"/>
+<text x="88" y="82" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="44" font-weight="760" fill="#162033">
+<tspan x="88" dy="0">Conditional Flow Matching 条件结构</tspan>
+</text>
+<text x="90" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="500" fill="#5f6f86">
+<tspan x="90" dy="0">把条件先汇聚为上下文，再约束速度场，避免所有线直接挤向 CFM</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="90" y="230" width="360" height="126" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="230" width="8" height="126" rx="4" fill="#2f6feb"/>
+</g>
+<text x="118" y="272" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">内容条件</tspan>
+</text>
+<text x="118" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">speech token</tspan>
+<tspan x="118" dy="20.48">μ：决定说什么</tspan>
+</text>
+<path d="M462 293 C 591 293, 591 512, 720 512" fill="none" stroke="#2f6feb" stroke-width="2"  marker-end="url(#arrowBlue)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="382" width="360" height="126" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="382" width="8" height="126" rx="4" fill="#1f9d67"/>
+</g>
+<text x="118" y="424" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">参考声学</tspan>
+</text>
+<text x="118" y="464" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">prompt</tspan>
+<tspan x="118" dy="20.48">Mel：提供音色与韵律线索</tspan>
+</text>
+<path d="M462 445 C 591 445, 591 512, 720 512" fill="none" stroke="#1f9d67" stroke-width="2"  marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="534" width="360" height="126" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="534" width="8" height="126" rx="4" fill="#6d5bd0"/>
+</g>
+<text x="118" y="576" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">风格条件</tspan>
+</text>
+<text x="118" y="616" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">speaker /</tspan>
+<tspan x="118" dy="20.48">style：说话人和表达方式</tspan>
+</text>
+<path d="M462 597 C 591 597, 591 512, 720 512" fill="none" stroke="#6d5bd0" stroke-width="2"  marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="686" width="360" height="126" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="686" width="8" height="126" rx="4" fill="#c2415a"/>
+</g>
+<text x="118" y="728" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">当前状态</tspan>
+</text>
+<text x="118" y="768" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">noisy y / x_t：当前</tspan>
+<tspan x="118" dy="20.48">Mel 位置</tspan>
+</text>
+<path d="M462 749 C 591 749, 591 512, 720 512" fill="none" stroke="#c2415a" stroke-width="2"  marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1060" y="230" width="360" height="126" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1060" y="230" width="8" height="126" rx="4" fill="#b7791f"/>
+</g>
+<text x="1088" y="272" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="1088" dy="0">时间步</tspan>
+</text>
+<text x="1088" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="500" fill="#5f6f86">
+<tspan x="1088" dy="0">t：生成路径上的位置</tspan>
+</text>
+<path d="M1048 293 C 932 293, 932 512, 816 512" fill="none" stroke="#b7791f" stroke-width="2"  marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1060" y="382" width="360" height="126" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1060" y="382" width="8" height="126" rx="4" fill="#0ea5b7"/>
+</g>
+<text x="1088" y="424" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="750" fill="#162033">
+<tspan x="1088" dy="0">可见性约束</tspan>
+</text>
+<text x="1088" y="464" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="16" font-weight="500" fill="#5f6f86">
+<tspan x="1088" dy="0">mask /</tspan>
+<tspan x="1088" dy="20.48">streaming：限制上下文范围</tspan>
+</text>
+<path d="M1048 445 C 932 445, 932 512, 816 512" fill="none" stroke="#0ea5b7" stroke-width="2"  marker-end="url(#arrow)"/>
+<circle cx="768" cy="512" r="122" fill="#ffffff" stroke="#2f6feb" stroke-width="2.4" filter="url(#shadow)"/>
+<text x="768" y="492" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="30" font-weight="800" fill="#162033">
+<tspan x="768" dy="0">vθ(x,t|c)</tspan>
+</text>
+<text x="768" y="532" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="768" dy="0">预测速度场</tspan>
+</text>
+</svg>

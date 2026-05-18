@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#14213d" flood-opacity="0.10"/></filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/></marker>
+      <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#2f6feb"/></marker>
+      <linearGradient id="hero" x1="0" x2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#12324a"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    </defs>
+<rect width="1536" height="1024" fill="#f8fafc"/>
+<path d="M0 210 C230 145 370 260 570 180 C850 70 1120 110 1536 18 L1536 0 L0 0 Z" fill="#eaf4ff"/>
+<path d="M0 1024 L1536 1024 L1536 830 C1260 890 980 800 720 874 C450 950 240 870 0 930 Z" fill="#f0f7f4"/>
+<text x="88" y="82" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="44" font-weight="760" fill="#162033">
+<tspan x="88" dy="0">Anki 复习卡片结构</tspan>
+</text>
+<text x="90" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="500" fill="#5f6f86">
+<tspan x="90" dy="0">把系统理解拆成可检索、可复习的单知识点</tspan>
+</text>
+<rect x="90" y="288" width="130" height="42" rx="21" fill="#2f6feb" opacity="0.10" stroke="#2f6feb" stroke-width="1.2"/>
+<text x="155" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#2f6feb">
+<tspan x="155" dy="0">01</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="90" y="350" width="318" height="230" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="350" width="8" height="230" rx="4" fill="#2f6feb"/>
+</g>
+<text x="118" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">模块职责</tspan>
+</text>
+<text x="118" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">Tokenizer / LLM</tspan>
+<tspan x="118" dy="23.04">/ CFM / Vocoder</tspan>
+</text>
+<line x1="416" y1="465" x2="428" y2="465" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="436" y="288" width="130" height="42" rx="21" fill="#1f9d67" opacity="0.10" stroke="#1f9d67" stroke-width="1.2"/>
+<text x="501" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#1f9d67">
+<tspan x="501" dy="0">02</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="436" y="350" width="318" height="230" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="436" y="350" width="8" height="230" rx="4" fill="#1f9d67"/>
+</g>
+<text x="464" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="464" dy="0">版本差异</tspan>
+</text>
+<text x="464" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="464" dy="0">V1 / V2 / V3</tspan>
+<tspan x="464" dy="23.04">解决的问题</tspan>
+</text>
+<line x1="762" y1="465" x2="774" y2="465" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="782" y="288" width="130" height="42" rx="21" fill="#6d5bd0" opacity="0.10" stroke="#6d5bd0" stroke-width="1.2"/>
+<text x="847" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#6d5bd0">
+<tspan x="847" dy="0">03</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="782" y="350" width="318" height="230" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="782" y="350" width="8" height="230" rx="4" fill="#6d5bd0"/>
+</g>
+<text x="810" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="810" dy="0">关键机制</tspan>
+</text>
+<text x="810" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="810" dy="0">FSQ、CFM、DiffRO、streaming</tspan>
+<tspan x="810" dy="23.04">mask</tspan>
+</text>
+<line x1="1108" y1="465" x2="1120" y2="465" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="1128" y="288" width="130" height="42" rx="21" fill="#c2415a" opacity="0.10" stroke="#c2415a" stroke-width="1.2"/>
+<text x="1193" y="315" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#c2415a">
+<tspan x="1193" dy="0">04</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="1128" y="350" width="318" height="230" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1128" y="350" width="8" height="230" rx="4" fill="#c2415a"/>
+</g>
+<text x="1156" y="392" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="1156" dy="0">风险边界</tspan>
+</text>
+<text x="1156" y="432" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="1156" dy="0">reward</tspan>
+<tspan x="1156" dy="23.04">balance、speaker</tspan>
+<tspan x="1156" dy="23.04">similarity、长尾文本</tspan>
+</text>
+</svg>

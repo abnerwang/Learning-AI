@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#14213d" flood-opacity="0.10"/></filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/></marker>
+      <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2,2 L12,7 L2,12 Z" fill="#2f6feb"/></marker>
+      <linearGradient id="hero" x1="0" x2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#12324a"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    </defs>
+<rect width="1536" height="1024" fill="#f8fafc"/>
+<path d="M0 210 C230 145 370 260 570 180 C850 70 1120 110 1536 18 L1536 0 L0 0 Z" fill="#eaf4ff"/>
+<path d="M0 1024 L1536 1024 L1536 830 C1260 890 980 800 720 874 C450 950 240 870 0 930 Z" fill="#f0f7f4"/>
+<text x="88" y="82" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="44" font-weight="760" fill="#162033">
+<tspan x="88" dy="0">CosyVoice 2 流式链路</tspan>
+</text>
+<text x="90" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="22" font-weight="500" fill="#5f6f86">
+<tspan x="90" dy="0">把离线 TTS 改造成低首包延迟的实时系统</tspan>
+</text>
+<rect x="90" y="278" width="130" height="42" rx="21" fill="#2f6feb" opacity="0.10" stroke="#2f6feb" stroke-width="1.2"/>
+<text x="155" y="305" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#2f6feb">
+<tspan x="155" dy="0">01</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="90" y="340" width="248.8" height="220" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="90" y="340" width="8" height="220" rx="4" fill="#2f6feb"/>
+</g>
+<text x="118" y="382" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="118" dy="0">Text</tspan>
+<tspan x="118" dy="29.44">chunks</tspan>
+</text>
+<text x="118" y="422" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="118" dy="0">文本按块进入统一 LM</tspan>
+</text>
+<line x1="346.8" y1="450" x2="358.8" y2="450" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="366.8" y="278" width="130" height="42" rx="21" fill="#1f9d67" opacity="0.10" stroke="#1f9d67" stroke-width="1.2"/>
+<text x="431.8" y="305" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#1f9d67">
+<tspan x="431.8" dy="0">02</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="366.8" y="340" width="248.8" height="220" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="366.8" y="340" width="8" height="220" rx="4" fill="#1f9d67"/>
+</g>
+<text x="394.8" y="382" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="394.8" dy="0">Streaming</tspan>
+<tspan x="394.8" dy="29.44">LM</tspan>
+</text>
+<text x="394.8" y="422" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="394.8" dy="0">边读文本边生成</tspan>
+<tspan x="394.8" dy="23.04">speech</tspan>
+<tspan x="394.8" dy="23.04">token</tspan>
+</text>
+<line x1="623.6" y1="450" x2="635.6" y2="450" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="643.6" y="278" width="130" height="42" rx="21" fill="#0ea5b7" opacity="0.10" stroke="#0ea5b7" stroke-width="1.2"/>
+<text x="708.6" y="305" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#0ea5b7">
+<tspan x="708.6" dy="0">03</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="643.6" y="340" width="248.8" height="220" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="643.6" y="340" width="8" height="220" rx="4" fill="#0ea5b7"/>
+</g>
+<text x="671.6" y="382" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="671.6" dy="0">Chunk-aware</tspan>
+<tspan x="671.6" dy="29.44">CFM</tspan>
+</text>
+<text x="671.6" y="422" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="671.6" dy="0">mask</tspan>
+<tspan x="671.6" dy="23.04">控制可见上下文</tspan>
+</text>
+<line x1="900.4000000000001" y1="450" x2="912.4000000000001" y2="450" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="920.4000000000001" y="278" width="130" height="42" rx="21" fill="#6d5bd0" opacity="0.10" stroke="#6d5bd0" stroke-width="1.2"/>
+<text x="985.4000000000001" y="305" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#6d5bd0">
+<tspan x="985.4000000000001" dy="0">04</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="920.4000000000001" y="340" width="248.8" height="220" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="920.4000000000001" y="340" width="8" height="220" rx="4" fill="#6d5bd0"/>
+</g>
+<text x="948.4000000000001" y="382" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="948.4000000000001" dy="0">Incremental</tspan>
+<tspan x="948.4000000000001" dy="29.44">Mel</tspan>
+</text>
+<text x="948.4000000000001" y="422" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="948.4000000000001" dy="0">分块生成声学特征</tspan>
+</text>
+<line x1="1177.2" y1="450" x2="1189.2" y2="450" stroke="#94a3b8" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="1197.2" y="278" width="130" height="42" rx="21" fill="#b7791f" opacity="0.10" stroke="#b7791f" stroke-width="1.2"/>
+<text x="1262.2" y="305" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="17" font-weight="720" fill="#b7791f">
+<tspan x="1262.2" dy="0">05</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="1197.2" y="340" width="248.8" height="220" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="1197.2" y="340" width="8" height="220" rx="4" fill="#b7791f"/>
+</g>
+<text x="1225.2" y="382" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="23" font-weight="750" fill="#162033">
+<tspan x="1225.2" dy="0">Audio</tspan>
+<tspan x="1225.2" dy="29.44">output</tspan>
+</text>
+<text x="1225.2" y="422" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="1225.2" dy="0">持续送入</tspan>
+<tspan x="1225.2" dy="23.04">vocoder 播放</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="250" y="760" width="1036" height="122" rx="18" fill="#f8fffd" stroke="#cbd5e1" stroke-width="1.4"/>
+<rect x="250" y="760" width="8" height="122" rx="4" fill="#0ea5b7"/>
+</g>
+<text x="278" y="802" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="24" font-weight="750" fill="#162033">
+<tspan x="278" dy="0">关键取舍</tspan>
+</text>
+<text x="278" y="842" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="500" fill="#5f6f86">
+<tspan x="278" dy="0">流式模式降低延迟，但可见上下文更少；复杂文本上内容一致性风险更高。</tspan>
+</text>
+</svg>

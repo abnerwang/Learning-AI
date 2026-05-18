@@ -11,11 +11,11 @@ CosyVoice 1 用监督 ASR 模型中插入 VQ 得到的 S3 语义 speech token，
 
 ## 图解
 
-![cosyvoice1 architecture gpt2](assets/cosyvoice1-architecture-gpt2.png)
+![CosyVoice 1 架构图](assets/cosyvoice1-architecture-gpt2.png)
 
 - 这张图重点看三段职责分工：S3 tokenizer 负责把参考语音变成语义 token，LLM 负责 text-to-token，CFM + vocoder 负责声学渲染和波形还原。
 - 复习时不要把 LLM 误认为直接生成音频；它生成的是离散 speech token。
-- 这张流程图由 gpt-image-2 生成，用于辅助建立直觉；精确术语和链路以正文描述为准。
+- 这张流程图已按统一信息图规范重绘，用于辅助建立直觉；精确术语和链路以正文描述为准。
 
 ## 研究问题
 

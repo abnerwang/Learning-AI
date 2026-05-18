@@ -243,13 +243,13 @@ CosyVoice 不是无条件生成任意 Mel，而是带条件生成。常见条件
 
 可以把条件关系理解成下面这张窄版流程图。它按 A4/PDF 导出重新排版：左侧是 text-to-token-to-mu 主干，右侧是 prompt Mel、speaker embedding、mask/streaming 的条件汇总，底部再与随机噪声一起进入 CFM。
 
-![cosyvoice flowmatching conditions gpt v3](assets/cosyvoice-flowmatching-conditions-gpt-v3.png)
+![Conditional Flow Matching 条件结构图](assets/cosyvoice-flowmatching-conditions-gpt-v3.png)
 
 一句话：Conditional 的意思是“生成路径不是随便走，而是在 token、说话人、prompt Mel 的约束下走”。
 
 ## CosyVoice1 -> CosyVoice2 -> CosyVoice3 的 Flow Matching 演进
 
-![cosyvoice flowmatching evolution gpt2](assets/cosyvoice-flowmatching-evolution-gpt2.png)
+![Flow Matching 演进图](assets/cosyvoice-flowmatching-evolution-gpt2.png)
 
 ### 总体演进
 
@@ -564,7 +564,7 @@ print(x)  # 应该逐渐接近真实数据分布
 
 CosyVoice 的设计不是一个模型从文本直接吐 waveform，而是分层：
 
-![cosyvoice system pipeline gpt v3](assets/cosyvoice-system-pipeline-gpt-v3.png)
+![CosyVoice 系统主路径图](assets/cosyvoice-system-pipeline-gpt-v3.png)
 
 好处是：
 
