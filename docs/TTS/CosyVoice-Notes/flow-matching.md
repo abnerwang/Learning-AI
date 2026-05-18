@@ -81,6 +81,8 @@ Flow Matching 不是“凭空画出一张最终语音图”，而是“训练一
 
 ## 图解：Flow Matching 到底在干什么
 
+![Flow Matching 从噪声 Mel 到真实 Mel 的速度场图解](assets/flow-matching-what-it-does-gpt2.png)
+
 可以这样读：
 
 - 左边的噪声 Mel：一开始什么都不像，只是随机噪声。
