@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flow Matching 动画实验室 | CosyVoice Notes</title>
-  <meta name="description" content="用交互动画理解 Flow Matching 如何把噪声推向 Mel spectrogram。">
+  <meta name="description" content="用分步交互动画理解 Flow Matching 如何把噪声逐步推向 Mel spectrogram。">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,15 +25,16 @@
       <section class="section">
         <div class="section-head">
           <div class="eyebrow">Animated Intuition</div>
-          <h1>Flow Matching：把每一步都看清楚</h1>
-          <p class="hero-copy">拖动时间轴观察完整链路：先从随机噪声 x0 出发，构造中间态 xt；再把 speech token、speaker prompt、mask 等条件送入速度模型 vθ；最后用 Euler / ODE 步进把 xt 推成目标 Mel x1。</p>
+          <h1><span class="h1-flow">Flow Matching：</span><span class="h1-rest">把每一步都看清楚</span></h1>
+          <p class="hero-copy">GitHub Pages 版本按教学节奏重新设计：从 x0 噪声开始，逐步显示目标 Mel、插值路径、条件注入、速度场、Euler 采样、流式 chunk 和 vocoder 输出。拖动时间轴可以逐帧检查每一步。</p>
         </div>
 
         <div class="flow-tabs" aria-label="Flow Matching 动画视角">
-          <button class="flow-tab active" data-flow-mode="pipeline" type="button">全链路</button>
+          <button class="flow-tab active" data-flow-mode="guided" type="button">逐步生成</button>
           <button class="flow-tab" data-flow-mode="field" type="button">速度场</button>
           <button class="flow-tab" data-flow-mode="condition" type="button">条件约束</button>
           <button class="flow-tab" data-flow-mode="streaming" type="button">流式 chunk</button>
+          <button class="flow-tab" data-flow-mode="trajectory" type="button">采样轨迹</button>
         </div>
 
         <div class="flow-stage">
@@ -43,18 +44,31 @@
           <aside class="panel pad controls">
             <div>
               <div class="slider-label">
-                <span data-flow-mode-title>全链路：x0 -> xt -> x1</span>
-                <strong data-flow-label>t = 35%</strong>
+                <span data-flow-mode-title>逐步生成：x0 -> xt -> Mel -> waveform</span>
+                <strong data-flow-label>进度 4%</strong>
               </div>
-              <input data-flow-progress type="range" min="0" max="1" step="0.001" value="0.35">
+              <input data-flow-progress type="range" min="0" max="1" step="0.001" value="0.04">
               <div class="action-row">
                 <button class="button primary" data-flow-play type="button">暂停</button>
+                <button class="button" data-flow-prev type="button">上一步</button>
+                <button class="button" data-flow-next type="button">下一步</button>
+                <button class="button" data-flow-replay type="button">重播</button>
                 <a class="button" href="flow-matching.html">读公式和代码解释</a>
+              </div>
+              <div class="speed-row" aria-label="动画速度">
+                <span>速度</span>
+                <button class="speed-chip" data-flow-speed="0.55" type="button">慢速</button>
+                <button class="speed-chip active" data-flow-speed="1" type="button">标准</button>
+                <button class="speed-chip" data-flow-speed="1.55" type="button">快速</button>
               </div>
             </div>
 
             <div class="step-list">
               <div class="step active" data-flow-step></div>
+              <div class="step" data-flow-step></div>
+              <div class="step" data-flow-step></div>
+              <div class="step" data-flow-step></div>
+              <div class="step" data-flow-step></div>
               <div class="step" data-flow-step></div>
               <div class="step" data-flow-step></div>
               <div class="step" data-flow-step></div>
@@ -67,7 +81,7 @@
         <div class="section-head">
           <div class="eyebrow">Why It Matters</div>
           <h2>放回 CosyVoice 里看</h2>
-          <p>Flow Matching 不是孤立算法，它是 LLM 之后的声学生成层。LLM 先给出离散 speech token，Flow Matching 再把 token、speaker prompt、文本上下文变成可被 Vocoder 播放的 Mel。</p>
+          <p>Flow Matching 不是孤立算法，它是 LLM 之后的声学生成层。LLM 先给出离散 speech token，Flow Matching 在条件约束下多步更新 Mel，最后交给 Vocoder 播放。GitHub Pages 里的动画优先服务学习，不需要和 Obsidian 截图保持同构。</p>
         </div>
         <div class="grid">
           <div class="panel pad span-4">
