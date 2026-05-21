@@ -106,7 +106,7 @@ $$
 E = \{e_1, e_2, \ldots, e_K\}
 $$
 
-每个 \(e_k\) 都是一个和 \(z_e\) 维度相同的向量。量化时做最近邻查找：
+每个 $e_k$ 都是一个和 $z_e$ 维度相同的向量。量化时做最近邻查找：
 
 $$
 \begin{aligned}
@@ -116,11 +116,11 @@ z_q(x) &= e_{k^*}, \\
 \end{aligned}
 $$
 
-所以 VQ 的离散 code 本质上是 codebook 里的行号。下游 LLM 看到的是 \(k^*\) 这个整数 token，而后面的 decoder / Flow / vocoder 看到的通常是对应的量化向量 \(z_q\)。
+所以 VQ 的离散 code 本质上是 codebook 里的行号。下游 LLM 看到的是 $k^*$ 这个整数 token，而后面的 decoder / Flow / vocoder 看到的通常是对应的量化向量 $z_q$。
 
 ### VQ 如何做梯度反传
 
-VQ 的难点是最近邻选择 \(\arg\min\) 不可导：\(k^*\) 是一个离散整数，不能像普通矩阵乘法那样直接反传梯度。因此 VQ-VAE 系列通常用 straight-through estimator，简称 STE。
+VQ 的难点是最近邻选择 $\arg\min$ 不可导：$k^*$ 是一个离散整数，不能像普通矩阵乘法那样直接反传梯度。因此 VQ-VAE 系列通常用 straight-through estimator，简称 STE。
 
 常见写法可以理解成：
 
@@ -134,7 +134,7 @@ $$
 z_q^{\mathrm{st}} = z_q
 $$
 
-因为 \(z_e + (z_q - z_e)\) 等于 \(z_q\)。也就是说，下游 decoder 看到的是被量化后的 codebook 向量。
+因为 $z_e + (z_q - z_e)$ 等于 $z_q$。也就是说，下游 decoder 看到的是被量化后的 codebook 向量。
 
 反向时：
 
@@ -142,7 +142,7 @@ $$
 \frac{\partial z_q^{\mathrm{st}}}{\partial z_e} \approx I
 $$
 
-因为 \(\operatorname{stop\_gradient}(z_q - z_e)\) 不传梯度，decoder 传回来的梯度会被“直通”复制给 encoder。这不是 argmin 的真实梯度，而是一个工程近似：前向保持离散，反向假装量化步骤近似恒等映射。
+因为 $\operatorname{stop\_gradient}(z_q - z_e)$ 不传梯度，decoder 传回来的梯度会被“直通”复制给 encoder。这不是 argmin 的真实梯度，而是一个工程近似：前向保持离散，反向假装量化步骤近似恒等映射。
 
 codebook 本身通常靠两类机制更新：
 
@@ -152,13 +152,13 @@ codebook 本身通常靠两类机制更新：
   \left\lVert \operatorname{stop\_gradient}(z_e) - e_{k^*} \right\rVert_2^2
   $$
 
-- Commitment loss：让 encoder 不要在 code 之间乱跳，鼓励 \(z_e\) 靠近已选 code。
+- Commitment loss：让 encoder 不要在 code 之间乱跳，鼓励 $z_e$ 靠近已选 code。
 
   $$
   \beta \left\lVert z_e - \operatorname{stop\_gradient}(e_{k^*}) \right\rVert_2^2
   $$
 
-有些实现不用显式 codebook loss，而是用 EMA 更新 codebook：统计每个 code 被哪些 \(z_e\) 选中，再把 code 向这些向量的均值移动。
+有些实现不用显式 codebook loss，而是用 EMA 更新 codebook：统计每个 code 被哪些 $z_e$ 选中，再把 code 向这些向量的均值移动。
 
 ### VQ 最小代码解读
 
@@ -233,7 +233,7 @@ Codebook collapse 不是一个单点 bug，而是 VQ 训练机制里的几个因
 
 1. **最近邻选择有赢家通吃效应**
 
-   每个 \(z_e\) 只会选择最近的一个 code。被选中的 code 会收到更新，没被选中的 code 基本没有梯度或 EMA 统计。训练早期如果部分 code 偶然位置更好，它们会被越来越多样本选中；另一些 code 长期没人选，就变成死码。
+   每个 $z_e$ 只会选择最近的一个 code。被选中的 code 会收到更新，没被选中的 code 基本没有梯度或 EMA 统计。训练早期如果部分 code 偶然位置更好，它们会被越来越多样本选中；另一些 code 长期没人选，就变成死码。
 
 2. **encoder 会主动适应常用 code**
 
@@ -241,7 +241,7 @@ Codebook collapse 不是一个单点 bug，而是 VQ 训练机制里的几个因
 
 3. **codebook 更新只覆盖被选中的 code**
 
-   用 codebook loss 或 EMA 时，只有 \(k^*\) 对应的 code 被当前样本更新。未命中的 code 不会自动移动到数据密集区域，距离 encoder 输出越来越远后，更难重新被选中。
+   用 codebook loss 或 EMA 时，只有 $k^*$ 对应的 code 被当前样本更新。未命中的 code 不会自动移动到数据密集区域，距离 encoder 输出越来越远后，更难重新被选中。
 
 4. **数据分布和目标函数可能天然不均衡**
 
@@ -289,7 +289,7 @@ $$
 
 这个组合可以再被映射成一个 token id，交给后面的 LLM 预测。关键点是：FSQ 的 code 空间来自“多个标量等级的笛卡尔积”，而不是来自一张显式学习出来的 codebook。
 
-更一般地说，如果有 \(d\) 个标量维度，每个维度分别有 \(L_1, L_2, \ldots, L_d\) 个等级，那么理论 code 数量是：
+更一般地说，如果有 $d$ 个标量维度，每个维度分别有 $L_1, L_2, \ldots, L_d$ 个等级，那么理论 code 数量是：
 
 $$
 \text{总 code 数} = L_1 \times L_2 \times \cdots \times L_d
@@ -331,7 +331,7 @@ $$
 = 33
 $$
 
-如果 \(\text{levels} = [8, 5, 5, 5]\)，理论 code 数就是：
+如果 $\text{levels} = [8, 5, 5, 5]$，理论 code 数就是：
 
 $$
 8 \times 5 \times 5 \times 5 = 1000
@@ -343,11 +343,11 @@ $$
 
 FSQ 的前向通常包含三步：
 
-1. **限制范围**：先把 encoder 输出压到有限区间，常见做法是 \(\tanh\) 或类似 bounded transform，避免数值无限跑远。
+1. **限制范围**：先把 encoder 输出压到有限区间，常见做法是 $\tanh$ 或类似 bounded transform，避免数值无限跑远。
 2. **缩放到等级空间**：把连续值映射到每个维度允许的等级范围。
-3. **舍入到最近等级**：用 \(\operatorname{round}\) / \(\operatorname{floor}\) 之类的确定性规则得到离散标量。
+3. **舍入到最近等级**：用 $\operatorname{round}$ / $\operatorname{floor}$ 之类的确定性规则得到离散标量。
 
-核心不可导点是 \(\operatorname{round}\)。FSQ 通常也用 STE：
+核心不可导点是 $\operatorname{round}$。FSQ 通常也用 STE：
 
 $$
 \begin{aligned}
@@ -356,15 +356,15 @@ q^{\mathrm{st}} &= z + \operatorname{stop\_gradient}(q - z).
 \end{aligned}
 $$
 
-前向时 \(q^{\mathrm{st}}\) 等于离散后的 \(q\)；反向时梯度近似按恒等函数传给 \(z\)。也就是说，FSQ 和 VQ 一样都不是对离散选择求真实梯度，而是用“前向离散、反向直通”的估计。
+前向时 $q^{\mathrm{st}}$ 等于离散后的 $q$；反向时梯度近似按恒等函数传给 $z$。也就是说，FSQ 和 VQ 一样都不是对离散选择求真实梯度，而是用“前向离散、反向直通”的估计。
 
 区别在于：
 
-- VQ 的不可导点是“在 \(K\) 个向量里做最近邻 \(\arg\min\)”。
+- VQ 的不可导点是“在 $K$ 个向量里做最近邻 $\arg\min$”。
 - FSQ 的不可导点是“每个标量维度做舍入 round”。
 - VQ 还要训练或维护 codebook；FSQ 没有可学习向量 codebook，因此不需要 codebook loss、commitment loss 或 EMA codebook update 这一整套机制。
 
-FSQ 仍然有边界问题：如果某个维度长期被 \(\tanh\) / clip 压在饱和区，梯度会变弱，等级也可能使用不均衡。所以 FSQ 不是完全没有训练风险，只是它去掉了 VQ 中最容易导致死码的“可学习 codebook 竞争”。
+FSQ 仍然有边界问题：如果某个维度长期被 $\tanh$ / clip 压在饱和区，梯度会变弱，等级也可能使用不均衡。所以 FSQ 不是完全没有训练风险，只是它去掉了 VQ 中最容易导致死码的“可学习 codebook 竞争”。
 
 ### FSQ 最小代码解读
 
