@@ -18,7 +18,6 @@
         <a href="#map">总览</a>
         <a href="#system">系统架构</a>
         <a href="#versions">版本演进</a>
-        <a href="#related">相关论文</a>
         <a href="#prereq">前置知识</a>
         <a href="flow-matching-lab.html">Flow 动画</a>
         <a href="#review">复习</a>
@@ -37,7 +36,7 @@
             <a class="button" href="anki-cards.html">刷 Anki 卡片</a>
           </div>
           <div class="kpi-row">
-            <div class="kpi"><strong>4</strong><span>篇论文笔记：CosyVoice 1/2/3 + DiTAR</span></div>
+            <div class="kpi"><strong>3</strong><span>篇核心论文：CosyVoice 1/2/3</span></div>
             <div class="kpi"><strong>4</strong><span>关键模块：Tokenizer / LLM / Flow / Vocoder</span></div>
             <div class="kpi"><strong>17</strong><span>前置概念，按学习路径重排</span></div>
             <div class="kpi"><strong>51</strong><span>单知识点 Anki 卡片</span></div>
@@ -170,30 +169,6 @@
         </div>
       </section>
 
-      <section id="related" class="section">
-        <div class="section-head">
-          <div class="eyebrow">Related Research</div>
-          <h2>相关路线：DiTAR 的连续 latent patch 建模</h2>
-          <p>DiTAR 不走离散 speech token 路线，而是用 causal LM 规划连续 latent patch，再用 LocDiT 扩散生成 patch 内细节。它适合作为理解 CosyVoice tokenizer 路线优劣的对照论文。</p>
-        </div>
-        <div class="grid">
-          <div class="panel visual-frame span-7">
-            <img src="assets/ditar-cosyvoice-comparison-gpt-image2.png" alt="DiTAR 与 CosyVoice 路线对比">
-          </div>
-          <div class="panel pad span-5">
-            <h3>为什么要和 CosyVoice 放在一起读</h3>
-            <ul class="compact-list">
-              <li><strong>CosyVoice：</strong>LLM 生成离散 speech token，CFM / vocoder 负责连续声学渲染。</li>
-              <li><strong>DiTAR：</strong>LM 只做跨 patch 自回归规划，LocDiT 在连续 latent 空间生成局部细节。</li>
-              <li><strong>关键差异：</strong>DiTAR 弱化离散码本瓶颈，但论文没有开源，也没有和 CosyVoice 3 直接对比。</li>
-            </ul>
-            <div class="action-row">
-              <a class="button primary" href="ditar.html">读 DiTAR 深度解析</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="prereq" class="section">
         <div class="section-head">
           <div class="eyebrow">Prerequisites</div>
@@ -225,8 +200,7 @@
           <a class="path-item" href="cosyvoice-1.html"><strong>04 CV1</strong><span>监督语义 token</span></a>
           <a class="path-item" href="cosyvoice-2.html"><strong>05 CV2</strong><span>流式系统</span></a>
           <a class="path-item" href="cosyvoice-3.html"><strong>06 CV3</strong><span>真实场景 scaling</span></a>
-          <a class="path-item" href="ditar.html"><strong>07 DiTAR</strong><span>连续表示对照路线</span></a>
-          <a class="path-item" href="anki-cards.html"><strong>08 Anki</strong><span>单点检索复习</span></a>
+          <a class="path-item" href="anki-cards.html"><strong>07 Anki</strong><span>单点检索复习</span></a>
         </div>
       </section>
     </main>

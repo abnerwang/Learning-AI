@@ -1,6 +1,6 @@
 ---
 title: "DiTAR：连续语音表示的扩散 Transformer 自回归建模"
-layout: default
+layout: ditar
 ---
 
 # DiTAR - 连续语音表示的扩散 Transformer 自回归建模
@@ -286,7 +286,7 @@ Table 3 是和 CosyVoice 最直接相关的表：
 
 这个结果符合架构分工：encoder 只是 patch 聚合器，LM 负责长程规划，LocDiT 负责局部连续细节；真正决定生成上限的是 LM 与 LocDiT。
 
-## 与 CosyVoice 系列的关系
+## 与 CosyVoice 系列的对照
 
 ### CosyVoice 路线
 

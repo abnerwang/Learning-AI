@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/TTS/CosyVoice-Notes/styles.css?v=20260521-code-light-math-dark' | relative_url }}">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="{{ '/TTS/DiTAR/' | relative_url }}">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>DiTAR Notes</span>
+      </a>
+      <nav class="nav" aria-label="主要导航">
+        <a href="{{ '/TTS/' | relative_url }}">TTS 专题</a>
+        <a href="{{ '/TTS/DiTAR/' | relative_url }}">DiTAR</a>
+        <a href="{{ '/TTS/CosyVoice-Notes/' | relative_url }}">CosyVoice</a>
+      </nav>
+    </header>
+    <main class="doc-main">
+      <article class="doc-card">
+        {{ content }}
+      </article>
+    </main>
+    <footer class="footer">Learning AI / TTS / DiTAR Notes</footer>
+  </div>
+</body>
+</html>
