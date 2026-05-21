@@ -260,8 +260,17 @@ input[type="range"] { width: 100%; accent-color: var(--cyan); }
   font-size: 1.08em;
 }
 .doc-card mjx-container:not([display="true"]) {
-  color: #f6d58b;
-  font-size: 1.02em;
+  display: inline-flex;
+  align-items: baseline;
+  margin: 0 2px;
+  padding: 0 5px;
+  border: 1px solid rgba(215, 222, 232, 0.72);
+  border-radius: 6px;
+  color: #172033;
+  background: #f8fafc;
+  font-size: 1.04em;
+  line-height: 1.35;
+  vertical-align: -0.08em;
 }
 .doc-card img {
   margin: 24px auto;
