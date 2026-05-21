@@ -169,15 +169,49 @@ input[type="range"] { width: 100%; accent-color: var(--cyan); }
 .doc-card code {
   padding: 2px 6px;
   border-radius: 6px;
-  color: var(--amber);
-  background: rgba(255,198,109,0.1);
+  color: #9a3412;
+  background: #fff7ed;
 }
 .doc-card pre {
   overflow-x: auto;
-  padding: 16px;
-  border: 1px solid var(--line);
+  padding: 18px 20px;
+  border: 1px solid #d7dee8;
   border-radius: 8px;
-  background: #080d14;
+  color: #172033;
+  background: #f8fafc;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.doc-card .highlight {
+  border-radius: 8px;
+  background: #f8fafc;
+}
+.doc-card .highlight pre {
+  margin: 0;
+}
+.doc-card pre code {
+  display: block;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1.68;
+  tab-size: 4;
+}
+.doc-card mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  margin: 18px 0;
+  padding: 18px 20px;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+  color: #172033;
+  background: #f8fafc;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+  font-size: 1.08em;
+}
+.doc-card mjx-container:not([display="true"]) {
+  color: #f6d58b;
+  font-size: 1.02em;
 }
 .doc-card img {
   margin: 24px auto;
