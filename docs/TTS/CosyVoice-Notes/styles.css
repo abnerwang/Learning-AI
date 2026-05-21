@@ -132,7 +132,7 @@ input[type="range"] { width: 100%; accent-color: var(--cyan); }
 .step.active { border-color: rgba(94, 231, 255, 0.6); color: var(--text); background: linear-gradient(135deg, rgba(94, 231, 255, 0.12), rgba(255,198,109,0.06)); box-shadow: 0 14px 34px rgba(94,231,255,0.08); }
 .step.done { border-color: rgba(88, 240, 196, 0.22); color: #b8c7d8; background: rgba(88, 240, 196, 0.045); }
 .step strong { color: inherit; }
-.learning-path { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
+.learning-path { display: grid; grid-template-columns: repeat(auto-fit, minmax(136px, 1fr)); gap: 10px; }
 .path-item { min-height: 124px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); }
 .path-item strong { display: block; color: var(--text); }
 .path-item span { color: var(--muted); font-size: 13px; }
